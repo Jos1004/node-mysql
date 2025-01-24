@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Listagem de clientes</title>
+    <link rel="stylesheet" href="../stylesheets/lista_cadastro.css" type="text/css">
+</head>
+<body>
+   <h1>Cadastro de Clientes</h1>
+   <h3></h3>
+   <table>
+     <thead>
+        <tr>
+          <td colspan="4">Listagem de clientes cadastros no sistema</td>
+        </tr>
+     </thead>
+     <tr>
+        <td>Nome</td>
+        <td>Idade</td>
+        <td>UF</td>
+        <td>Ações</td>
+     </tr>
+     <%if(!results || results.length == 0){%>
+     <tr>
+        <td colspan="4">Nenhum cliente cadastrado.</td>
+     </tr>
+       <%}else{ results.forEach(function (cliente){%>
+         <tr>
+             <td style="width: 50%"><%=cliente.nome%></td>
+             <td style="width: 15%"><%=cliente.idade%></td>
+             <td style="width: 15%"><%=cliente.uf%></td>
+             <td><a href="/edit/<%=cliente.id%>" id="a1">Editar</a> <a id="a2" href="/delete/<%=cliente.id%>" onclick="return confirm('Tem certeza?')">Excluir</a>
+             </td>
+
+         </tr>
+       <%}) }%>
+     <tr id="linhaEspecial">
+         <td colspan="4"><a href="/new">Cadastrar Novo Cliente.</a></td>
+     </tr>
+   </table>
+   <script>
+     const linhas = document.querySelectorAll('tr')
+
+     linhas.forEach((linha, index) =>{
+        if(index % 2 === 0){
+          linha.style.backgroundColor = '#84A98C'
+          linha.style.color = '#CAD2C5'
+          return
+        }
+         linha.style.backgroundColor = '#CAD2C5'
+     })
+
+     const link1 = document.querySelectorAll('#a1')
+     const link2 = document.querySelectorAll('#a2')
+      link1.forEach((link, index) => {
+          if(index % 2 === 0){
+              link.style.color = '#CAD2C5'
+              return
+          }
+          link.style.color = '#84A98C'
+      })
+     link2.forEach((link, index) => {
+         if(index % 2 === 0){
+             link.style.color = '#CAD2C5'
+             return
+         }
+         link.style.color = '#84A98C'
+     })
+
+     if(location.href.indexOf('delete=true') != -1){
+          alert('Cliente excluído com sucesso!')
+      }
+      else if(location.href.indexOf('edit=true') != -1){
+          alert('Cliente editado com sucesso!')
+      }
+      else if(location.href.indexOf('new=true') != -1){
+          alert('Cliente cadastrado com sucesso!')
+      }
+      else if (location.href.indexOf('erro') != -1){
+          alert('Ocorreu um erro!')
+      }
+   </script>
+</body>
+</html>

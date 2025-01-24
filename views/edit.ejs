@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="../stylesheets/cadastro.css">
+    <title>Novo Cadastro</title>
+</head>
+<body>
+<h1>Editar Cadastro</h1>
+<label id="sub">Para editar o cadastro altere as informações abaixo</label>
+<br>
+<br>
+<br>
+<br>
+<form action="<%=action%>" method="POST">
+    <label>Nome:
+        <br>
+        <input type="text" name="nome" class="in" id="nome" value="<%=result.nome%>">
+    </label>
+    <br/>
+    <br/>
+    <label>Idade:
+        <br>
+        <input type="number" name="idade" class="in" step="1" min="18" id="num" value="<%=result.idade%>">
+    </label>
+
+    <br/>
+    <br/>
+    <label>UF:
+        <% const s = "selected"%>
+        <select name="uf">
+            <option value="SP" <%if(result.uf === "SP"){%><%=s%><%}%>>SP</option>
+            <option value="RJ" <%if(result.uf === "RJ"){%><%=s%><%}%>>RJ</option>
+            <option value="MG" <%if(result.uf === "MG"){%><%=s%><%}%>>MG</option>
+            <option value="BH" <%if(result.uf === "BH"){%><%=s%><%}%>>BH</option>
+            <option value="RS" <%if(result.uf === "RS"){%><%=s%><%}%>>RS</option>
+            <option value="SC" <%if(result.uf === "SC"){%><%=s%><%}%>>SC</option>
+            <option value="PR" <%if(result.uf === "PR"){%><%=s%><%}%>>PR</option>
+        </select>
+        <br>
+    </label>
+    <br/>
+    <br/>
+    <input type="submit" value="Editar" id="cadastrar">
+    <br>
+    <br>
+    <a href="/" style="text-indent: 115px">Cancelar</a>
+</form>
+</body>
+</html>
