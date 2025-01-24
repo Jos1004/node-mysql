@@ -1,0 +1,120 @@
+body{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+}
+
+#sub{
+    text-shadow: 1px 2px 4px #777;
+    color: black;
+}
+
+form{
+   width: 22%;
+}
+
+h1{
+    text-shadow: 1px 3px 3px dimgray;
+    color:#84A98C;
+    font-family: Exo, Georgia, Times, 'Times New Roman', Times, serif;
+    font-weight: 300;
+    font-size: 40px;
+}
+
+.in{
+    border-inline: none;
+    border-block-start: none;
+    font-size: 15px;
+    width: 85%;
+}
+
+#nome:nth-child(2){
+    width: 90%;
+}
+
+label{
+    font-family: Exo, Georgia, Times, 'Times New Roman', Times, serif;
+    color:black;
+    font-size: 15px;
+    font-weight: 200;
+}
+
+h3{
+    text-shadow: 1px 1px 10px grey;
+    font-weight: 300;
+}
+
+#reset{
+    border: transparent;
+    border-radius: 5px;
+    background-color: black;
+    font-size: 15px;
+    color: white;
+    font-family: Georgia, Times, 'Times New Roman', Times, serif;
+    height: 36px;
+    width: 100%;
+    box-shadow: 1px 1px 2px dimgray;
+    cursor:pointer;
+}
+
+#cadastrar{
+    width: 100%;
+    border: transparent;
+    border-radius: 5px;
+    background-color: #036666;
+    font-size: 15px;
+    color: white;
+    font-family: Georgia, Times, 'Times New Roman', Times, serif;
+    height: 40px;
+    box-shadow: 1px 1px 2px dimgray;
+    cursor:pointer;
+}
+
+#reset:hover, #cadastrar:hover{
+    border: 3.5px solid #84A98C;
+
+}
+
+#cadastrar:active, #reset:active{
+    transform: scale(0.7);
+    transition: transform 1.2s;
+}
+
+select{
+    background: linear-gradient(to right, white 60%, #84A98C 50%);
+    width: 17%;
+    height: 2em;
+    border-radius: 5px;
+    color: white;
+    -webkit-text-fill-color: black;
+    border: 2px solid #84A98C;
+}
+
+option{
+    color: black;
+}
+
+a{
+    font-style: oblique;
+    text-decoration: underline;
+    text-indent: 80px;
+    color: #84A98C;
+    position: absolute;
+    font-size: 18px;
+}
+
+a:hover{
+    cursor: pointer;
+    color: #00B7FF;
+}
+
+
+
+
+
+
+
+
+
