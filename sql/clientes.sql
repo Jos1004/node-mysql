@@ -2,10 +2,10 @@
 connect server, para quem não conhece é so clicar no simbolo cilindrico*/
 /*Em seguida abra o crud, botão direito em Tables e crie uma tabela chamada clientes*/
 /* E insira esse comandos após apertar Apply 
-id int auto_increment primary key,
-nome varchar(150),
-idade int,
-uf varchar(2)*/ 
+id int auto_increment not null primary key,
+nome varchar(150) not null,
+idade int not null,
+uf varchar(2) not null*/ 
 
 use crud;
 describe clientes;
